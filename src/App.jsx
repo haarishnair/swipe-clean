@@ -10,7 +10,7 @@ import { analyzeMediaItem } from './utils/memeDetector';
 import { RefreshCw } from 'lucide-react';
 
 export default function App() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(generateDemoMedia);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [history, setHistory] = useState([]);
   const [clearedHistory, setClearedHistory] = useState([]); // Tracks emptied items for session undo
@@ -20,12 +20,6 @@ export default function App() {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
 
   const fileInputRef = useRef(null);
-
-  // Initialize demo data on first load
-  useEffect(() => {
-    const initialDemo = generateDemoMedia();
-    setItems(initialDemo);
-  }, []);
 
   // Handle Swipe Left (TRASH)
   const handleSwipeLeft = (item) => {
