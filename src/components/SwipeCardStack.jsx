@@ -151,7 +151,7 @@ export function SwipeCardStack({
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           onDragEnd={handleDragEnd}
-          whileGrab={{ cursor: 'grabbing' }}
+          whileTap={{ cursor: 'grabbing' }}
         >
           {/* Stamps */}
           <motion.div className="swipe-stamp stamp-keep" style={{ opacity: stampKeepOpacity }}>
